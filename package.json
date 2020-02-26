@@ -1,0 +1,26 @@
+{
+  "name": "ifq-buddy",
+  "version": "0.1.0",
+  "description": "A Slack bot to handle the download of IFQ issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zmoog/ifq-buddy.git"
+  },
+  "keywords": [],
+  "author": "Maurizio Branca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zmoog/ifq-buddy/issues"
+  },
+  "homepage": "https://github.com/zmoog/ifq-buddy#readme",
+  "dependencies": {
+    "serverless": "^1.64.0"
+  },
+  "devDependencies": {
+    "serverless-python-requirements": "^5.1.0"
+  }
+}

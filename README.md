@@ -27,11 +27,18 @@ $ g clone git@github.com:zmoog/ifq-buddy.git
 $ cd ifq-buddy
 ```
 
-Configure access to you AWS account, for example if you use a profile name:
+Environment variables and aliases:
 
+```bash
+
+# we can use the local version of Serverless
+$ alias sls='./node_modules/.bin/sls'
+
+$ export PYTHONPATH=`pwd`:$PYTHONPATH 
+
+$ export AWS_PROFILE=<YOUR_PROFILE_NAME>
 ```
-$ export AWS_PROFILE='your profile name'
-```
+
 
 Create/activate the virtual environment for this project:
 

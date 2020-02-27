@@ -81,7 +81,7 @@ $ aws ssm put-parameter --name "/ifq_buddy/dev/ifq/password" --value "secret!" -
 
 Let's run the lambda function locally to see if it's all working!
 
-```
+```bash
 $ sls invoke local -f sync
 {
     "statusCode": 200,
@@ -111,12 +111,12 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Add additional notes about how to deploy this on a live system.
 
 ## Built With
 
 * [Serverless Framework](https://serverless.com) - The serverless framework used to deploy on AWS
-* [ifq](https://github.com/zmoog/ifq) - A tiny library used to scrape the IFQ website using requests and lxml.
+* [ifq](https://github.com/zmoog/ifq) - A tiny library used to scrape the IFQ website using [requests](https://requests.readthedocs.io/en/master/) and [lxml](https://lxml.de).
 
 ## Contributing
 

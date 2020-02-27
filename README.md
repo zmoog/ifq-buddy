@@ -113,6 +113,42 @@ Give an example
 
 Add additional notes about how to deploy this on a live system.
 
+If you have alread set up your development environment the actual deploy is easy.
+
+```bash
+$ sls deploy --stage dev  
+Serverless: Generating requirements.txt from Pipfile...
+Serverless: Parsed requirements.txt from Pipfile in /Users/mbranca/code/projects/zmoog/ifq-buddy/.serverless/requirements.txt...
+Serverless: Using static cache of requirements found at /Users/mbranca/Library/Caches/serverless-python-requirements/75512bb3ef5416497bd7dbae33f748f83aef5eb55445c03e2ec3c17d0fb44d48_slspyc ...
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Injecting required Python packages to package...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service ifq-buddy.zip file to S3 (5.26 MB)...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+.........
+Serverless: Stack update finished...
+Service Information
+service: ifq-buddy
+stage: dev
+region: eu-west-1
+stack: ifq-buddy-dev
+resources: 6
+api keys:
+  None
+endpoints:
+  None
+functions:
+  sync: ifq-buddy-dev-sync
+layers:
+  None
+Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.
+```
+
+
 ## Built With
 
 * [Serverless Framework](https://serverless.com) - The serverless framework used to deploy on AWS
@@ -132,4 +168,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

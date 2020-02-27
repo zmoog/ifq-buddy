@@ -12,8 +12,9 @@ This bot requires an AWS account. All services can run fine within the free tier
 
 You need to install the following tools:
 
-* [Node.js](https://nodejs.org/en/) — tested with v12.14.1 (via nvm), required to run the Serverless Framework.
-* [Python](https://www.python.org) 3.7, the language used to write all the application code.
+* [Git](https://git-scm.com)
+* [Node.js](https://nodejs.org/en/) — tested with v12.14.1 (via [nvm](https://github.com/nvm-sh/nvm)), required to run the Serverless Framework.
+* [Python](https://www.python.org) 3.7, the language used to write all the application code. You should evaluate [pyenv](https://github.com/pyenv/pyenv#installation) as tool to manage Python versions.
 * [Pipenv](https://pipenv.kennethreitz.org/en/latest/) — tested with version 2018.11.26, it's used to streamline development in Python projects.
 * [AWS CLI](https://aws.amazon.com/cli/) - the AWS command line interface, used to manage environment setting using the [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html).
 
@@ -25,7 +26,7 @@ A step by step series of steps that tell you how to get a development env runnin
 First, you need to get the project source code:
 
 ```bash
-$ git clone git@github.com:zmoog/ifq-buddy.git  # you can also use the https endpoint
+$ git clone https://github.com/zmoog/ifq-buddy.git
 
 $ cd ifq-buddy
 ```

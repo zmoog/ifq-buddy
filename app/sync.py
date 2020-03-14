@@ -3,6 +3,9 @@ import logging
 from datetime import date
 from ifq import Scraper
 
+from app.settings import OC_URL, OC_USERNAME, OC_PASSWORD, OC_FILE_PATTERN
+import owncloud
+
 
 class SyncTask:
     """
@@ -19,4 +22,7 @@ class SyncTask:
         local_path = self.scraper.download_pdf(day)
         self.logger.info(f'File {local_path} downloaded successfully')
 
-        # TODO: and now you do something with the downloaded file.
+        # TODO: move to a separate function
+        oc = owncloud.Client(OC_URL)
+        oc.login(OC_USERNAME, OC_PASSWORD)
+        oc.put_file(OC_FILE_PATTERN.format(day=day), local_path)

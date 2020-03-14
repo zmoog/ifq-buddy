@@ -11,6 +11,7 @@ setuptools = "*"
 
 [packages]
 ifq = "*"
+pyocclient = "*"
 
 [requires]
 python_version = "3.7"

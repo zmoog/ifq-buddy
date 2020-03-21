@@ -1,54 +1,10 @@
-# Welcome to Serverless!
-#
-# This file is the main config file for your service.
-# It's very minimal at this point and uses default values.
-# You can always add more config options for more control.
-# We've included some commented out config examples here.
-# Just uncomment any of them to get that config option.
-#
-# For full config options, check the docs:
-#    docs.serverless.com
-#
-# Happy Coding!
-
 service: ifq-buddy
-# app and org for use with dashboard.serverless.com
-#app: your-app-name
-#org: your-org-name
-
-# You can pin your service to only deploy with a specific Serverless version
-# Check out our docs for more details
-# frameworkVersion: "=X.X.X"
-
 provider:
   name: aws
   runtime: python3.7
   region: eu-central-1
-
-# you can overwrite defaults here
 #  stage: dev
 
-# you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
-
-# you can add packaging information here
 package:
  include:
    - app/**
@@ -56,13 +12,10 @@ package:
  exclude:
    - "**"
 
-# custom:
-#   pythonRequirements:
-#     dockerizePip: non-linux
-
 functions:
   sync:
     handler: functions/sync.handle
+    timeout: 30
     environment:
       IFQ_USERNAME: ${ssm:/ifq_buddy/dev/ifq/username}
       IFQ_PASSWORD: ${ssm:/ifq_buddy/dev/ifq/password~true}
@@ -72,10 +25,8 @@ functions:
 
     events:
       - schedule:
-          # more details here: 
-          # https://serverless.com/framework/docs/providers/aws/events/schedule/
           name: ${self:service}-${opt:stage, self:provider.stage}-Sync
-          rate: cron(0 6 * * * *)
+          rate: cron(0 6 * * ? *)
           enabled: true
 
 plugins:

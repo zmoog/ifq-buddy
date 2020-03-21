@@ -7,3 +7,7 @@
     ```
     User: arn:aws:iam::901528470952:user/samuel is not authorized to perform: cloudformation:DescribeStacks on resource: arn:aws:cloudformation:eu-central-1:901528470952:stack/ifq-buddy-dev/*
     ```
+   - IAMFullAccess
+   - AmazonS3FullAccess
+   - AWSCloudFormationFullAccess
+   - AWSLambdaFullAccess??

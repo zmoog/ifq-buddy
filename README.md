@@ -1,6 +1,6 @@
 # ifq-buddy
 
-A Slack bot to handle the download of IFQ issues
+An AWS lambda written in Python to handle the download of IFQ issues
 
 ## Getting Started
 
@@ -166,6 +166,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Maurizio Branca** - *Initial work* - [zmoog](https://github.com/zmoog)
+* **Samuel** - *Few adjustments to upload somewhere the downloaded IFQ issue* - [24mu13](https://github.com/24mu13)
 
 ## License
 

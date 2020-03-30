@@ -1,7 +1,7 @@
 {
   "name": "ifq-buddy",
-  "version": "0.1.0",
-  "description": "A Slack bot to handle the download of IFQ issues",
+  "version": "0.3.0",
+  "description": "A process that downloads automatically last IFQ issue, on daily base",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

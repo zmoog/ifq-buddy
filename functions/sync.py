@@ -1,14 +1,11 @@
 import json
-
 from datetime import date
 
-from app.settings import IFQ_USERNAME, IFQ_PASSWORD
-from app.sync import SyncTask
-from ifq import Scraper
+from app.downloader import IFQDownloader
+from app.uploader import OwncloudUploader
 
-scraper = Scraper(IFQ_USERNAME, IFQ_PASSWORD)
-task = SyncTask(scraper)
-
+downloader = IFQDownloader()
+uploader = OwncloudUploader()
 
 def handle(event, context):
     body = {
@@ -16,8 +13,11 @@ def handle(event, context):
         "input": event
     }
 
-    # run the scheduled task
-    task.run(date.today())
+    # download today IFQ
+    local_path = downloader.download(date.today())
+
+    # upload to owncloud
+    uploader.upload(local_path, date.today())
 
     response = {
         "statusCode": 200,

@@ -17,10 +17,9 @@
     "url": "https://github.com/zmoog/ifq-buddy/issues"
   },
   "homepage": "https://github.com/zmoog/ifq-buddy#readme",
-  "dependencies": {
-    "serverless": "^1.67.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "serverless": "^1.83.2",
     "serverless-python-requirements": "^5.1.0"
   }
 }
